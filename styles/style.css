@@ -168,6 +168,7 @@ Game Section Styles
 ---------------------------------------------------------------------------------*/
 
 .game {
+display: none;
 position: relative;
 background-color: #394264;
 width: 550px;
@@ -233,6 +234,7 @@ font-weight: 700;
 font-size: 1.5em;
 }
 
+/*
 input {
 width: 300px;
 height: 50px;
@@ -245,6 +247,33 @@ border: solid 1px #1f253d;
 -webkit-border-radius: 4px;
 -moz-border-radius: 4px;
 border-radius: 4px;
+}*/
+
+#quiz{
+width: 300px;
+height: 50px;
+display: block;
+padding: 0.8em 0;
+margin: 0.8em auto 0;
+background: #50597b;
+color: #fff;
+font-size: 2em;
+padding: 0.2em;
+border: solid 1px #1f253d;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+
+#quiz:hover, input.button:hover, .answer:hover{
+background: #CC3300;
+color: #fff;
+-webkit-transition: background 1s ease-in-out;
+-moz-transition: background 1s ease-in-out;
+-ms-transition: background 1s ease-in-out;
+-o-transition: background 1s ease-in-out;
+transition: background 1s ease-in-out;
+cursor: pointer;
 }
 
 input.button {
@@ -259,6 +288,7 @@ padding: 0.2em;
 transition: background 1s ease-in-out;
 }
 
+/*
 input.button:hover {
 background: #CC3300;
 color: #fff;
@@ -268,7 +298,7 @@ color: #fff;
 -o-transition: background 1s ease-in-out;
 transition: background 1s ease-in-out;
 cursor: pointer;
-}
+}*/
 
 input.text {
 text-align: center;
@@ -299,7 +329,7 @@ outline: none !important;
 ul.guessBox {
 height: 80px;
 margin: 10px auto 0;
-background: #11a8ab;
+background: #979B9B; /*#BFC5C5;*/
 padding: 0.5em;
 display: block;
 line-height: 2em;
@@ -308,6 +338,7 @@ border-bottom-right-radius: 4px;
 color: #fff;
 overflow: auto;
 }
+
 ul.guessBox li {
 display: inline;
 /*border:1px solid;
@@ -334,3 +365,30 @@ background-color: #cc324b;
 color: #1F253D;
 font-weight: bold;
 }
+
+#answers{
+    /*border: 1px solid red;*/
+    margin: 0 auto;
+    padding: 4%;
+    width: 80%;
+
+}
+
+.answer{
+    /*border: 1px solid black;*/
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 30px;
+    padding: 1em 0.4em;
+    font-size: 1.2em;
+    font-weight: 400;
+    display: block;
+    line-height: 0em;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    color: #fff;
+}
+
+

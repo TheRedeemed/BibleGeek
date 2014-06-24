@@ -1,154 +1,36 @@
 $(document).ready(function(){
+   var qNum = 0;
+   var questions = [". Question1", ". Question2", ". Question3"];
+   var q1Op = ["Q1_Option1", "Q1_Option2", "Q1_Option3"];
+   var q2Op = ["Q2_Option1", "Q2_Option2", "Q2_Option3"];
+   var q3Op = ["Q3_Option1", "Q3_Option2", "Q3_Option3"];
+   var qCount = -1;
+   var opCount = 0;
+  
+  //$('#question').hide();
+  
+  $("#quiz").click(function(){
+      //alert("Clicked");
+      //$('#question').show();
+      //$('#question').append(++qNum + questions[0]);
+      //alert("Clicked");
+	$('#startQuizz').hide();
+    $('.game').show();
+    
+    ++opCount;
+	showQuizzPane(++qNum,questions,++qCount,q1Op);
+  });
+  
+  function showQuizzPane(questionNum,allQuestions,questionCt,options){ 	
 
-/*var randNum;
-var inputNum;
-var feedBackMsg;
-var guess = parseInt($('#count').text());*/
-var qNum = 1;
-var questions = [". How many parts are they in the Bible",". How many books are they in the Bible",". How many men wrote the Bible",
-                 ". What is the name of the first book in the Bible",". What is the main idea of the Bible"];
+     $('#question').append(questionNum + allQuestions[questionCt]);
 
-/*--- Display information modal box ---*/
-/*   $(".what").click(function(){
-     $(".overlay").fadeIn(1000);
-
-   });*/
-
-   /*--- Hide information modal box ---*/
-/* $("a.close").click(function(){
-   $(".overlay").fadeOut(1000);
-   });*/
-
-/*
-function guessNumber(){
-var genNum;
-genNum = Math.floor((Math.random() * 100) + 1);
-return genNum;
-}
-
-randNum = guessNumber();*/
-
-//alert(randNum);
-/*
-$('#userGuess').keyup(function(e){
-var key = e.keyCode
-if(key === 13) {
-alert("key up!");
-event.preventDefault();
-compareNumber(randNum);
-};
-}); */
-	var i = 0;
-	$('#question').append(qNum+questions[i]);
-
-	$('#guessButton').click(function(){
-		
-	});
-
-	/*for(i=0; i<questions.length+1; i++){
-			
-	}*/
-	
-	/*
-	$('#guessButton').click(function(){
-		//alert("Button Click");
-		compareNumber(randNum);
-	});
-	*/
-/*
-	$('.new').click(function(){
-	location.reload();
-	});
-
-	function compareNumber(num){
-		inputNum = $('#userGuess').val();
-		//alert('Comparing numbers');
-		var playAgain = true;
-
-		numFormatValidation(inputNum);
-
-		if(numValueValidation(inputNum)){
-
-		if(inputNum < num){
-		$('#guessList').append('<li class="cold">'+inputNum+'</li>');
-		//$('#guessList').append('Cold');
-		feedBackMsg = 'Cold!!';
-		feedBackUpdate(feedBackMsg);
-		counter();
-
-
-		}else if(inputNum > num){
-		$('#guessList').append('<li class="hot">'+inputNum+'<li>');
-		//$('#guessList').append('Hot');
-		feedBackMsg = 'Hot!!';
-		feedBackUpdate(feedBackMsg);
-		counter();	
-
-		} else if (inputNum == num){
-		//alert('Got It!!!');
-		feedBackMsg = 'Got It!!!';
-		feedBackUpdate(feedBackMsg);
-		do{
-		playAgain = confirm("Would like to play again");
-
-		if(playAgain === true){
-		playAgain = false;
-		location.reload();
-
-		}else{
-		playAgain = false;
-		$('#userGuess').prop('disabled', true);
-		$('#guessButton').prop('disabled', true);
-		}
-		} while(playAgain);
-		}
-
-		$('#userGuess').val("");
-		$('#userGuess').empty();	
-
-		}
-
-	}
-
-	function numFormatValidation(input){
-
-		if(isNaN(input)){
-		//alert(input + ' is not a number\nPlease enter a valid number');
-		//$('#feedback').text("");
-		//$('#feedback').append(input + ' is not a valid number <br> Please enter a valid number');
-		feedBackMsg = '<span id="nonDigit">'+input + '</span> is not a valid number <br> Please enter a valid number';
-		feedBackUpdate(feedBackMsg);
-		$('#userGuess').val("");
-		$('#userGuess').empty();
-		} else{
-		return input;
-		}	
-	}
-
-	function numValueValidation(input){
-
-		if(input < 1 || input > 100){
-		//alert('Please enter a number between 1 and 100');
-		//$('#feedback').text("");
-		//$('#feedback').append('Please enter a number between <br> 1 and 100');
-		feedBackMsg = 'Please enter a number between <br> 1 and 100';
-		feedBackUpdate(feedBackMsg);
-		$('#userGuess').val("");
-		$('#userGuess').empty();
-		return false;
-		} else{
-		return true;
-		}	
-	}
-
-	function counter(){
-		$('#count').text("");
-		$('#count').append(++guess);
-	}
-
-	function feedBackUpdate(msg){
-		$('#feedback').text("");
-		$('#feedback').append(msg);
-	}*/
-
+     for(i=0; i<options.length; i++){
+     	$('#answers').append('<div class="answer">'+ options[i]+'</div>');
+     }
+     /*
+     $('#answers').append('<div class="answer">I have a bike</div>');
+     $('#answers').append('<div class="answer">I have a bycicle</div>');
+     $('#answers').append('<div class="answer">I have a car</div>');*/
+  }
 });

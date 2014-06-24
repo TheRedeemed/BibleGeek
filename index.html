@@ -1,47 +1,57 @@
 <!doctype html>
 
 <html lang="en">
-<head>
+	<head>
 
-<title>Bible Geek</title>
+		<title>Bible Geek</title>
 
-<!-- Meta Tags -->
-<meta charset="utf-8"/>
+		<!-- Meta Tags -->
+		<meta charset="utf-8"/>
 
-<!-- Stylesheets -->
-<!--<link rel="stylesheet" href="styles/reset.css">-->
-<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,900italic' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="styles/style.css"/>
-<link rel="stylesheet" href="main.css"/>
+		<!-- Stylesheets -->
+		<!--<link rel="stylesheet" href="styles/reset.css">-->
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,900,900italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="styles/style.css"/>
+		<!--<link rel="stylesheet" href="main.css"/>-->
 
-<!-- JavaScript -->
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript" src="js/bibleGeek.js"></script>
+		<!-- JavaScript -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bibleGeek.js"></script>
 
-</head>
-<body>
+	</head>
+	<body>
 
-<header> <!--Header -->
+	<header> <!--Header -->
 
-	<h1>Bible Geek</h1>
+		<h1>Bible Geek</h1>
 
-</header>
+	</header>
 
-<section class="game"> <!-- Guessing Section -->
+	<div id="startQuizz">
+		<img src="img/holyBible.png" /> <!--width="400" height="150" alt="Logo"/>-->
 
-	<h2 id="question"></h2>
+		<form>
+		  <input type="button" id="quiz" name="submit" value="Start Quizz"/>
+		</form>
+	</div>
 
-	<form>
-	<!--	<input type="text" name="userGuess" id="userGuess" class="text" maxlength="3" autocomplete="off" placeholder="Enter your Guess" required/>-->
-	    <input type="submit" id="guessButton" class="button" name="submit" value="Submit Answer"/>
-	</form>
+	<section class="game"> <!-- Guessing Section -->
 
-	<!--<p>Guess # <span id="count">0</span>!</p>
+		<h2 id="question"></h2>
 
-	<ul id="guessList" class="guessBox clearfix">-->
+		<div id="answers"></div>
 
-	</ul>
+		<form>
+		<!--	<input type="text" name="userGuess" id="userGuess" class="text" maxlength="3" autocomplete="off" placeholder="Enter your Guess" required/>
+		    <input type="submit" id="guessButton" class="button" name="submit" value="Submit Answer"/>-->
+		</form>
 
-</section>
-</body>
+		<!--<p>Guess # <span id="count">0</span>!</p>-->
+
+		<ul id="guessList" class="guessBox clearfix">
+
+		</ul>
+
+	</section>
+	</body>
 </html>
