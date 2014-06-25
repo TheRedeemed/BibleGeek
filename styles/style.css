@@ -265,7 +265,8 @@ border: solid 1px #1f253d;
 border-radius: 4px;
 }
 
-#quiz:hover, input.button:hover, .answer:hover{
+
+#quiz:hover{
 background: #CC3300;
 color: #fff;
 -webkit-transition: background 1s ease-in-out;
@@ -288,7 +289,7 @@ padding: 0.2em;
 transition: background 1s ease-in-out;
 }
 
-/*
+
 input.button:hover {
 background: #CC3300;
 color: #fff;
@@ -298,7 +299,7 @@ color: #fff;
 -o-transition: background 1s ease-in-out;
 transition: background 1s ease-in-out;
 cursor: pointer;
-}*/
+}
 
 input.text {
 text-align: center;
@@ -391,4 +392,14 @@ font-weight: bold;
     color: #fff;
 }
 
+.answer:hover{
+background: #CC3300;
+color: #fff;
+-webkit-transition: background 1s ease-in-out;
+-moz-transition: background 1s ease-in-out;
+-ms-transition: background 1s ease-in-out;
+-o-transition: background 1s ease-in-out;
+transition: background 1s ease-in-out;
+cursor: pointer;
+}
 

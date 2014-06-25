@@ -1,36 +1,53 @@
 $(document).ready(function(){
    var qNum = 0;
    var questions = [". Question1", ". Question2", ". Question3"];
-   var q1Op = ["Q1_Option1", "Q1_Option2", "Q1_Option3"];
-   var q2Op = ["Q2_Option1", "Q2_Option2", "Q2_Option3"];
-   var q3Op = ["Q3_Option1", "Q3_Option2", "Q3_Option3"];
+   //var q1Op = ["Question1_Option1", "Question1_Option2", "Question1_Option3"];
+   //var q2Op = ["Question2_Option1", "Question2_Option2", "Question2_Option3"];
+   //var q3Op = ["Question3_Option1", "Question3_Option2", "Question3_Option3"];
+   var answersOptions = [["Question1_Option1", "Question1_Option2", "Question1_Option3"],
+                         ["Question2_Option1", "Question2_Option2", "Question2_Option3"],
+                         ["Question3_Option1", "Question3_Option2", "Question3_Option3"]];
    var qCount = -1;
    var opCount = 0;
   
   //$('#question').hide();
+/*
+  for(i=0; i<answersOptions.length; i++){
+  	for(j=0; j<answersOptions[i].length;j++){
+  		alert(answersOptions[i][j]);
+  	}
+  }*/
   
   $("#quiz").click(function(){
-      //alert("Clicked");
-      //$('#question').show();
-      //$('#question').append(++qNum + questions[0]);
-      //alert("Clicked");
 	$('#startQuizz').hide();
     $('.game').show();
     
-    ++opCount;
-	showQuizzPane(++qNum,questions,++qCount,q1Op);
+	showQuizzPane(++qNum,questions,++qCount,answersOptions[0]);
+
+  });
+
+  $('#guessButton').click(function(){
+  	//alert('Clicked!');
+  	rmOldQuestion();
+  	 for(j=1; j<answersOptions.length; j++){
+  		showQuizzPane(++qNum,questions,++qCount,answersOptions[j]);
+  	}
   });
   
-  function showQuizzPane(questionNum,allQuestions,questionCt,options){ 	
+  function showQuizzPane(questionNum,allQuestions,curQuestion,options){ 	
 
-     $('#question').append(questionNum + allQuestions[questionCt]);
+    $('#question').append(questionNum + allQuestions[curQuestion]);
 
      for(i=0; i<options.length; i++){
      	$('#answers').append('<div class="answer">'+ options[i]+'</div>');
      }
-     /*
-     $('#answers').append('<div class="answer">I have a bike</div>');
-     $('#answers').append('<div class="answer">I have a bycicle</div>');
-     $('#answers').append('<div class="answer">I have a car</div>');*/
   }
+
+  function rmOldQuestion(){
+  	$('#question').val("");
+  	$('#question').empty();
+  	$('#answers').val("");
+  	$('#answers').empty();
+  }
+
 });
