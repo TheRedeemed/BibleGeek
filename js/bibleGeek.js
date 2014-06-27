@@ -7,8 +7,11 @@ $(document).ready(function(){
    var answersOptions = [["Question1_Option1", "Question1_Option2", "Question1_Option3"],
                          ["Question2_Option1", "Question2_Option2", "Question2_Option3"],
                          ["Question3_Option1", "Question3_Option2", "Question3_Option3"]];
+
+   var correctAnswers = [];
    var qCount = -1;
    var opCount = 0;
+   var opNum = 0;
   
   //$('#question').hide();
 /*
@@ -22,24 +25,39 @@ $(document).ready(function(){
 	$('#startQuizz').hide();
     $('.game').show();
     
-	showQuizzPane(++qNum,questions,++qCount,answersOptions[0]);
+	showQuizzPane(++qNum, questions, ++qCount, opNum, answersOptions[opCount]);
 
   });
 
   $('#guessButton').click(function(){
   	//alert('Clicked!');
   	rmOldQuestion();
-  	 for(j=1; j<answersOptions.length; j++){
-  		showQuizzPane(++qNum,questions,++qCount,answersOptions[j]);
+
+  	++opCount;
+  	if(opCount<answersOptions.length){
+  		showQuizzPane(++qNum, questions, ++qCount, opNum, answersOptions[opCount]);
+  	} else {
+  		alert("Done");
   	}
+
   });
+
+
+   $(document).on("click",".answer", function() {
+
+   		var optionValue = answersOptions[opCount];
+
+    	checkAnswer(optionValue);
+
+	});
+
   
-  function showQuizzPane(questionNum,allQuestions,curQuestion,options){ 	
+  function showQuizzPane(questionNum,allQuestions,curQuestion,optionNumber,options){ 	
 
     $('#question').append(questionNum + allQuestions[curQuestion]);
 
      for(i=0; i<options.length; i++){
-     	$('#answers').append('<div class="answer">'+ options[i]+'</div>');
+     	$('#answers').append('<div class="answer">'+ ++optionNumber +'. ' + options[i]+'</div>');
      }
   }
 
@@ -48,6 +66,10 @@ $(document).ready(function(){
   	$('#question').empty();
   	$('#answers').val("");
   	$('#answers').empty();
+  }
+
+  function checkAnswer(index){
+  	alert("answer " + index + " Clicked");
   }
 
 });
