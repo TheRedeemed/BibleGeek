@@ -219,7 +219,7 @@ border: solid 1px #1f253d;
 border-radius: 4px;
 }*/
 
-#quiz{
+#quiz {
 width: 300px;
 height: 50px;
 display: block;
@@ -246,6 +246,34 @@ color: #fff;
 transition: background 1s ease-in-out;
 cursor: pointer;
 }
+
+#startOver{
+width: 100px;
+height: 30px;
+display: block;
+padding: 0.1em 0;
+margin: 0.5em auto 0;
+background: #333333;/*#50597b;*/
+color: #fff;
+font-size: 1em;
+padding: 0.2em;
+border: solid 1px #1f253d;
+-webkit-border-radius: 4px;
+-moz-border-radius: 4px;
+border-radius: 4px;
+}
+
+#startOver:hover{
+background: #9E0508;
+color: #fff;
+-webkit-transition: background 1s ease-in-out;
+-moz-transition: background 1s ease-in-out;
+-ms-transition: background 1s ease-in-out;
+-o-transition: background 1s ease-in-out;
+transition: background 1s ease-in-out;
+cursor: pointer;
+}
+
 
 input.button {
 background: #1F253D;
@@ -298,7 +326,7 @@ outline: none !important;
 }
 
 ul.guessBox {
-height: 80px;
+height: 90px;
 margin: 10px auto 0;
 background: #979B9B; /*#BFC5C5;*/
 padding: 0.5em;

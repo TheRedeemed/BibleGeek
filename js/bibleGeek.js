@@ -85,9 +85,14 @@ $(document).ready(function(){
     } else {
        $('#question').append('Thank you');
        $('#answers').append('You score: ' + correctAnswers + ' out of ' + questions.length);
+       $('#guessList').append('<input type="button" id="startOver" name="start" value="Try Again"/>');
 
     }
 
+  });
+
+  $(document).on("click","#startOver", function() {
+    location.reload();
   });
 
   
