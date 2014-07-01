@@ -4,7 +4,7 @@ $(document).ready(function(){
                     ". According to the Bible what should we do to be saved"];
    var answersOptions = [["About 50", "About 100", "About 40"],
                          ["Old Testament: 39 and New Testament: 27", "Old Testament: 30 and New Testament: 25", "Old Testament: 40 and New Testament: 27"],
-                         ["You have to be a Jew", "Repent from our sins and acknowledge Jesus as Lord and savior", "Nothing God loves everybody"]];
+                         ["You have to be a Jew", "Repent from our sins and acknowledge Jesus as Lord and savior", "Do nothing God loves everybody"]];
 
 
    var qCount = -1;
@@ -20,62 +20,21 @@ $(document).ready(function(){
 
   });
 
-/*
-  $('#guessButton').click(function(){
-    //alert('Clicked!');
-    rmOldQuestion();
-
-    ++opCount;
-    if(opCount<answersOptions.length){
-      showQuizzPane(++qNum, questions, ++qCount, opNum, answersOptions[opCount]);
-    } else {
-      alert("Done");
-    }
-
-  });
-*/
-
    $(document).on("click",".answer", function() {
 
       var optionValue = $(this).text();
       var index = $(".answer").index(this);
+      var correctAns =[3, 1, 2];
 
-      ++index;
-
-      if(qNum == 1){
-
-        if(index == 3){
-            $('#guessList').append('<li>' + qNum + ': correct</li>');
+   ++index;
+   
+   if(correctAns[qNum-1] == index){
+            $('#guessList').append('<li class="correct">' + qNum + ': correct</li>');
             ++correctAnswers;
 
-          }else {
-            $('#guessList').append('<li>' + qNum + ': Incorrect</li>');
-            
-          }
-
-      } else if(qNum == 2) {
-
-        if(index == 1){
-            $('#guessList').append('<li>' + qNum + ': correct</li>');
-            ++correctAnswers;
-
-          }else {
-            $('#guessList').append('<li>' + qNum + ': Incorrect</li>');
-            
-          }
-
-      } else if(qNum == 3) {
-
-        if(index == 2){
-            $('#guessList').append('<li>' + qNum + ': correct</li>');
-            ++correctAnswers;
-
-          }else {
-            $('#guessList').append('<li>' + qNum + ': Incorrect</li>');
-            
-          }
-
-      } 
+    }else {
+      $('#guessList').append('<li class="incorrect">' + qNum + ': Incorrect</li>');
+    }
 
     rmOldQuestion();
 
@@ -84,7 +43,7 @@ $(document).ready(function(){
       showQuizzPane(++qNum, questions, ++qCount, answersOptions[opCount]);
     } else {
        $('#question').append('Thank you');
-       $('#answers').append('You score: ' + correctAnswers + ' out of ' + questions.length);
+       $('#answers,.score').append('<div class="score">You score: ' + correctAnswers + ' out of ' + questions.length+'</div>');
        $('#guessList').append('<input type="button" id="startOver" name="start" value="Try Again"/>');
 
     }
