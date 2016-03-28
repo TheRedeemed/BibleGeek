@@ -4,7 +4,7 @@ $(document).ready(function(){
                     ". According to the Bible what should we do to be saved"];
    var answersOptions = [["About 50", "About 100", "About 40"],
                          ["Old Testament: 39 and New Testament: 27", "Old Testament: 30 and New Testament: 25", "Old Testament: 40 and New Testament: 27"],
-                         ["You have to be a Jew", "Repent and Trust Jesus Christ as Lord and savior", "Do nothing God loves everybody"]];
+                         ["You have to be a Jew", "Repent and Trust in Jesus Christ as Lord and savior", "Do nothing God loves everybody"]];
 
 
    var qCount = -1;
